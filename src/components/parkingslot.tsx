@@ -48,12 +48,12 @@ function Parkingslot(props: parkingslot) {
         justify="center"
         style={{ width: "100%" }}
       >
-        <Grid item xs={6}>
+        <Grid item xs={8}>
           <Typography variant="subtitle1">{startTime.format("dddd DD HH:mm")}-{endTime.format("HH:mm")}</Typography>
           <Typography variant="subtitle2">{props.location}</Typography>
           <Typography variant="subtitle2">{props.licensePlate}</Typography>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={4}>
           <Button variant="contained" color="secondary" style={{ float: "right", margin: "1rem" }} onClick={() => {
             removeParkingSlot(props.id);
           }}>
