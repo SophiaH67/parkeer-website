@@ -15,7 +15,7 @@ function Parkingslots() {
       justify="center"
       style={{ width: "100%" }}
     >
-      {parkingSlots.map( (parkingSlot, i) => <Parkingslot key={parkingSlot.id} id={parkingSlot.id} startTime={parkingSlot.startTime} endTime={parkingSlot.endTime} licensePlate={parkingSlot.licensePlate} />)}
+      {parkingSlots.map( (parkingSlot, i) => <Parkingslot key={parkingSlot.id} location={parkingSlot.location} id={parkingSlot.id} startTime={parkingSlot.startTime} endTime={parkingSlot.endTime} licensePlate={parkingSlot.licensePlate} />)}
     </Grid>
   );
 }

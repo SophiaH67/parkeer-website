@@ -50,6 +50,7 @@ function Parkingslot(props: parkingslot) {
       >
         <Grid item xs={6}>
           <Typography variant="subtitle1">{startTime.format("dddd DD HH:mm")}-{endTime.format("HH:mm")}</Typography>
+          <Typography variant="subtitle2">{props.location}</Typography>
           <Typography variant="subtitle2">{props.licensePlate}</Typography>
         </Grid>
         <Grid item xs={6}>

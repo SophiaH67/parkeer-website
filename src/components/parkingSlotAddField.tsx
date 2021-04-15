@@ -6,6 +6,7 @@ import { parkingslot } from '../interfaces';
 
 function ParkingSlotAddField() {
   const [licenseplate, setLicenseplate] = useState("");
+  const [location, setLocation] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
   return (
@@ -24,6 +25,13 @@ function ParkingSlotAddField() {
             style={{margin: "1rem", width: "20rem"}}
             value={licenseplate}
             onChange={(event) => { setLicenseplate(event.target.value) }}
+          />
+          <TextField
+            label="Locatie"
+            variant="outlined"
+            style={{margin: "1rem", maxWidth: "20rem"}}
+            value={location}
+            onChange={(event) => { setLocation(event.target.value) }}
           />
           <TextField
             id="startTime"
@@ -52,6 +60,7 @@ function ParkingSlotAddField() {
               startTime: new Date(startTime).getTime(),
               endTime: new Date(endTime).getTime(),
               licensePlate: licenseplate,
+              location: location,
               id: Math.round(Math.random() * 100000)
             };
             addParkingSlot(parkingSlot);

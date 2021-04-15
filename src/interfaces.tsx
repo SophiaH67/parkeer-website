@@ -4,5 +4,6 @@ export interface parkingslot {
     startTime: number
     endTime: number
     licensePlate: string
+    location: string
     id: number
 }
