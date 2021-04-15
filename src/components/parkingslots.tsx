@@ -1,9 +1,11 @@
 import { Grid } from '@material-ui/core';
-import React from 'react';
+import React, { useState } from 'react';
 import Parkingslot from './parkingslot';
-import { getParkingSlots } from '../functions';
+import { getParkingSlots, setRefreshFunction } from '../functions';
 
 function Parkingslots() {
+  const [random, setRandom] = useState(0);
+  setRefreshFunction(() => setRandom(Math.random()));
   let parkingSlots = getParkingSlots();
   return (
     <Grid
