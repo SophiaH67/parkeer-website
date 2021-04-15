@@ -15,7 +15,7 @@ function GooglemapsModal(props: props) {
           <DialogContentText>
             Selecteer uw parkeerplek op de kaart
             </DialogContentText>
-          <img style={{width: "100%", height: "100%"}} src="/google maps.png" />
+          <img style={{width: "100%", height: "100%"}} src="https://assets.marnixah.com/googlemaps.png" />
         </DialogContent>
         <DialogActions>
           <Button onClick={props.onClose} color="primary">
