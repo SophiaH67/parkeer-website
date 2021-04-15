@@ -12,3 +12,9 @@ export const getParkingSlots = ():parkingslot[] => {
     if (parkingSlots === null) parkingSlots = "[]";
     return JSON.parse(parkingSlots);
 }
+
+export const removeParkingSlot = (id: number):void => {
+    let parkingSlots = getParkingSlots();
+    parkingSlots = parkingSlots.filter(parkingSlot => parkingSlot.id !== id)
+    localStorage.setItem('parkingSlots', JSON.stringify(parkingSlots));
+}
