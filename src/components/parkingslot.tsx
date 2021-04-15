@@ -56,7 +56,7 @@ function Parkingslot(props: parkingslot) {
           </Button>
         </Grid>
       </Grid>
-      <LinearProgress variant="determinate" value={((new Date().getTime() - props.startTime) / (props.endTime - props.startTime)) * 100} />
+      <LinearProgress variant="determinate" value={progress} />
 
     </Paper>
   );
