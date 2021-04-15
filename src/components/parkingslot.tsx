@@ -7,6 +7,7 @@ import 'dayjs/locale/nl';
 import relativeTime from 'dayjs/plugin/relativeTime';
 /// <reference types="@dayjs/duration" />
 import duration from 'dayjs/plugin/duration';
+import { removeParkingSlot } from '../functions';
 dayjs.extend(relativeTime);
 dayjs.extend(duration);
 
@@ -52,7 +53,9 @@ function Parkingslot(props: parkingslot) {
           <Typography variant="subtitle2">{props.licensePlate}</Typography>
         </Grid>
         <Grid item xs={6}>
-          <Button variant="contained" color="secondary" style={{ float: "right", margin: "1rem" }}>
+          <Button variant="contained" color="secondary" style={{ float: "right", margin: "1rem" }} onClick={() => {
+            removeParkingSlot(props.id);
+          }}>
             annuleer
           </Button>
         </Grid>
