@@ -7,7 +7,7 @@ import 'dayjs/locale/nl';
 import relativeTime from 'dayjs/plugin/relativeTime';
 /// <reference types="@dayjs/duration" />
 import duration from 'dayjs/plugin/duration';
-import { removeParkingSlot } from '../functions';
+import { removeParkingSlot, refresh } from '../functions';
 dayjs.extend(relativeTime);
 dayjs.extend(duration);
 
@@ -28,7 +28,7 @@ function Parkingslot(props: parkingslot) {
     setDurationLeft(
       dayjs.duration(endTime.valueOf() - new Date().getTime()).humanize()
     )
-    
+    if (endTime.valueOf() > new Date().getTime()) refresh();
   }
   useEffect(() => {
     setInterval(updateProgress, 1000);

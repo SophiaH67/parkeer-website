@@ -19,9 +19,11 @@ export const addParkingSlot = (parkingSlot: parkingslot) => {
 }
 
 export const getParkingSlots = ():parkingslot[] => {
-    let parkingSlots = localStorage.getItem('parkingSlots');
-    if (parkingSlots === null) parkingSlots = "[]";
-    return JSON.parse(parkingSlots);
+    let parkingSlotsString = localStorage.getItem('parkingSlots');
+    if (parkingSlotsString === null) parkingSlotsString = "[]";
+    let parkingSlots: parkingslot[] = JSON.parse(parkingSlotsString);
+    parkingSlots = parkingSlots.filter(parkingSlot => parkingSlot.endTime > new Date().getTime());
+    return parkingSlots;
 }
 
 export const removeParkingSlot = (id: number):void => {
