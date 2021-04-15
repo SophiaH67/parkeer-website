@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Box from '@material-ui/core/Box';
-import { Grid, Paper, TextField, Button } from '@material-ui/core';
+import { Grid, Paper, TextField, Button, InputAdornment } from '@material-ui/core';
+import GooglemapsButton from './googlemapsButton';
 import { addParkingSlot } from '../functions';
 import { parkingslot } from '../interfaces';
 
@@ -34,6 +35,12 @@ function ParkingSlotAddField() {
             value={location}
             required
             onChange={(event) => { setLocation(event.target.value) }}
+            InputProps={{
+              endAdornment:
+              <InputAdornment position="end">
+                <GooglemapsButton />
+              </InputAdornment>
+            }}
           />
           <TextField
             id="startTime"
