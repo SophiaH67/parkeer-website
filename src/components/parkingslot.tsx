@@ -35,6 +35,7 @@ function Parkingslot(props: parkingslot) {
   }, []);
 
   return (
+    <Grid item xs={11} style={{margin: "1rem"}}>
     <Paper style={{ padding: "1rem" }}>
       <Typography variant="h5">
         U bent nog geparkeert voor {durationLeft}
@@ -59,6 +60,7 @@ function Parkingslot(props: parkingslot) {
       <LinearProgress variant="determinate" value={progress} />
 
     </Paper>
+    </Grid>
   );
 }
 
