@@ -1,4 +1,4 @@
-import { Box, Button, Grid, LinearProgress, Paper, Typography } from '@material-ui/core';
+import { Button, Grid, LinearProgress, Paper, Typography } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { parkingslot } from '../interfaces';
 import dayjs from 'dayjs';
@@ -11,14 +11,12 @@ dayjs.extend(relativeTime);
 dayjs.extend(duration);
 
 dayjs.locale('nl')
-let interval: NodeJS.Timeout;
 
 function Parkingslot(props: parkingslot) {
   const [progress, setProgress] = useState(100);
   const [durationLeft, setDurationLeft] = useState("loading...");
   const startTime = dayjs(props.startTime);
   const endTime = dayjs(props.endTime);
-  const diff = startTime.diff(endTime);
 
   const updateProgress = () => {
     setProgress(
@@ -32,7 +30,7 @@ function Parkingslot(props: parkingslot) {
     
   }
   useEffect(() => {
-    interval = setInterval(updateProgress, 1000);
+    setInterval(updateProgress, 1000);
     updateProgress();
   }, []);
 
