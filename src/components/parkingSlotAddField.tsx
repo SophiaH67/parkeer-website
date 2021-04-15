@@ -24,6 +24,7 @@ function ParkingSlotAddField() {
             variant="outlined"
             style={{margin: "1rem", width: "20rem"}}
             value={licenseplate}
+            required
             onChange={(event) => { setLicenseplate(event.target.value) }}
           />
           <TextField
@@ -31,6 +32,7 @@ function ParkingSlotAddField() {
             variant="outlined"
             style={{margin: "1rem", maxWidth: "20rem"}}
             value={location}
+            required
             onChange={(event) => { setLocation(event.target.value) }}
           />
           <TextField
@@ -39,6 +41,7 @@ function ParkingSlotAddField() {
             type="datetime-local"
             style={{margin: "1rem"}}
             value={startTime}
+            required
             onChange={(event) => { setStartTime(event.target.value) }}
             InputLabelProps={{
               shrink: true,
@@ -50,6 +53,7 @@ function ParkingSlotAddField() {
             type="datetime-local"
             style={{margin: "1rem"}}
             value={endTime}
+            required
             onChange={(event) => { setEndTime(event.target.value) }}
             InputLabelProps={{
               shrink: true,
